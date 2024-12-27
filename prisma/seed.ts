@@ -91,7 +91,7 @@ async function up() {
       }
     }
   })
-
+ console.log(pizza1)
   await prisma.productItem.createMany({
     data: [
       // peperoni

@@ -136,6 +136,108 @@ export const products = [
     name: 'Чоризо фреш',
     imageUrl:
       'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
-      categoryId: 1,
+    categoryId: 1,
   },
-]
+  {
+    name: 'Гавайская',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
+    categoryId: 2,
+  },
+  {
+    name: 'Мясная',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
+    categoryId: 2,
+  },
+  {
+    name: 'Овощная',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
+    categoryId: 2,
+  },
+  {
+    name: 'Куриная',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
+    categoryId: 3,
+  },
+  {
+    name: 'Супер сырная',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
+    categoryId: 3,
+  },
+  {
+    name: 'Барбекю',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Маргарита',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Острая',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Деревенская',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Томатная',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Цезарь',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Греческая',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Ветчина и грибы',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Морская',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Фирменная',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:584x584/11EE7D61706D472F9A5D71EB94149304.webp',
+    categoryId: 1,
+  },
+  {
+    name: 'Экзотическая',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D61304FAF5A98A6958F2BB2D260.webp',
+    categoryId: 1,
+  },
+  {
+    name: '4 сезона',
+    imageUrl:
+      'https://media.dodostatic.net/image/r:233x233/11EE7D610CF7E265B7C72BE5AE757CA7.webp',
+    categoryId: 1,
+  },
+];

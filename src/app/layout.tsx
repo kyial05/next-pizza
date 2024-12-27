@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '@/components/shared';
 
 // 5:21
+
 const nunito = Nunito({
   subsets: ['cyrillic'],
   variable: '--font-nunito',
