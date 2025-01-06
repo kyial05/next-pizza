@@ -22,10 +22,13 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
     setFocused(false);
   });
 
-  useDebounce(() => {
-    Api.products.search(searchQuery).then(items => {
-      setPrducts(items);
-    });
+  useDebounce(async () => {
+    try {
+      const response = await Api.products.search(searchQuery)
+      setPrducts(response);
+    } catch (error) {
+      console.log(error);
+    }
   }, 250, [searchQuery]);
 
   const onClickItem = () => {
