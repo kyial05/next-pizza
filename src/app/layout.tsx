@@ -3,7 +3,7 @@ import { Nunito } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/shared';
 
-// 6:07
+// 7:24
 
 const nunito = Nunito({
   subsets: ['cyrillic'],
