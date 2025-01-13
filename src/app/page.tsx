@@ -1,24 +1,26 @@
 import { Container, Filters, ProductsGroupList, Title, TopBar } from "@/components/shared";
+import { prisma } from "../../prisma/prisma-client";
 
-// import React from 'react';
+export default async function Home() {
+  const categories = await prisma.category.findMany({
+    include: {
+      products: {
+        include: {
+          ingredients: true,
+          items: true,
+        }
+      }
+    }
+  });
 
-// interface Props {
-//   className?: string,
-// }
+  console.log(categories);
 
-// export const N: React.FC<Props> = ({ className }) => {
-//   return (
-//     <div className={className}></div>
-//   )
-// }
-// 2:45
-export default function Home() {
   return (
     <>
       <Container className="mt-10" >
         <Title text='Все пиццы' size='lg' className="font-extrabold" />
       </Container>
-      <TopBar />
+      <TopBar categories={categories.filter ((category) => category.products.length > 0)}/>
       <Container className="mt-10 pb-14">
         <div className="flex gap-[80px]">
           <div className="w-[250px]">
@@ -27,88 +29,18 @@ export default function Home() {
 
           <div className="flex-1">
             <div className="flex flex-col gap-16">
-              <ProductsGroupList
-                title="Пиццы"
-                categoryId={1}
-                items={[
-                  {
-                    id: 1,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                  {
-                    id: 2,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                  {
-                    id: 3,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                  {
-                    id: 4,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                  {
-                    id: 5,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                ]}
-              />
-              <ProductsGroupList
-                title="Комбо"
-                categoryId={2}
-                items={[
-                  {
-                    id: 1,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                  {
-                    id: 2,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                  {
-                    id: 3,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                  {
-                    id: 4,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                  {
-                    id: 5,
-                    name: "Диабло",
-                    imageUrl: "https://media.dodostatic.net/image/r:584x584/11EE7D5FFFEF64678F36FEAF9DE80589.avif",
-                    price: 550,
-                    items: [{ price: 550 }]
-                  },
-                ]}
-              />
+              {
+                categories.map((category) => (
+                  category.products.length > 0 && (
+                    <ProductsGroupList
+                      key={category.id}
+                      title={category.name}
+                      categoryId={category.id}
+                      items={category.products}
+                    />
+                  )
+                ))
+              }
             </div>
           </div>
         </div>
